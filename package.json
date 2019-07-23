@@ -1,0 +1,8 @@
+{
+  "name": "redis-default-env",
+  "version": "0.0.1",
+  "dependencies": {
+    "redis": "^2.8.0",
+    "then-redis": "^2.0.1"
+  }
+}
