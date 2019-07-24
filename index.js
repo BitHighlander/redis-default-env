@@ -57,13 +57,13 @@ let getMaster = async function(){
 if(process.env.NODE_ENV === 'production'){
 	log.info(TAG,"Production redis cluster detected")
 	redis0 = new Redis(process.env.REDIS_CONNECTION_CLUSTER_0)
+	publisher = new Redis(process.env.REDIS_CONNECTION_CLUSTER_0)
+	subscriber = new Redis(process.env.REDIS_CONNECTION_CLUSTER_0)
+
 	redis1 = new Redis(process.env.REDIS_CONNECTION_CLUSTER_1)
 	redis2 = new Redis(process.env.REDIS_CONNECTION_CLUSTER_2)
 
 	redis = redis0
-	//pub/sub can be anything
-	publisher = redis0
-	subscriber = redis0
 
 
 	getMaster()
