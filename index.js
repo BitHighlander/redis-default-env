@@ -23,6 +23,8 @@ let TAG = " | REDIS-CONNECTION-MODULE | "
 let log = require("loggerdog-client")()
 let Redis = require("ioredis");
 
+log.info(process.env.REDIS_CONNECTION)
+
 let redis
 let publisher
 let subscriber
@@ -53,6 +55,7 @@ let getMaster = async function(){
 
 
 if(process.env.NODE_ENV === 'production'){
+	log.info(TAG,"Production redis cluster detected")
 	redis0 = new Redis(process.env.REDIS_CONNECTION_CLUSTER_0)
 	redis1 = new Redis(process.env.REDIS_CONNECTION_CLUSTER_1)
 	redis2 = new Redis(process.env.REDIS_CONNECTION_CLUSTER_2)

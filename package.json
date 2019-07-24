@@ -2,6 +2,7 @@
   "name": "redis-default-env",
   "version": "1.0.3",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "ioredis": "^4.11.2",
     "loggerdog-client": "^1.0.2"
   }
